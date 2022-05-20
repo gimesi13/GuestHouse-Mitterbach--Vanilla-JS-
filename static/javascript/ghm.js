@@ -54,8 +54,4 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-
-/*random chnage*/
-/*random change 2*/
-/*test chnage 3*/
-//new chnage
+//delete
