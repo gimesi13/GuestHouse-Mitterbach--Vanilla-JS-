@@ -54,5 +54,3 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-
-/* changes*/
