@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="wrapper-1"></div>
+    <div id="wrapper1" class="wrapper-1"></div>
     
     <div class="container">
         <!--header bar-->
@@ -65,22 +65,95 @@
         <section id="aboutus">
             <div class="about-us-panel">
                 <h1>About Us:</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam at perspiciatis libero deserunt modi quae!</p>
+                <p>Gyermek és felnőtt táborok szervezésével foglalkozunk. Egész évben szeretettel várjuk a táborozókat, télen sítáboroknak, az év többi részében pedig sporttáboroknak, iskolai kirándulásoknak adunk otthont.                    
+                </p>
             </div>
             <div class="about-us-panel-pictures">
-                <img src="static/images/336679_XL.jpg">
+                <img src="static/images/IMG_1348 (2).jpg">
             </div>
+            <div class="downarrow"><a href="#location"><img class="downarrowimg" src="static/images/pngaaa.com-92298.png"></a></div>
         </section>
         <section id="location">
-            <h1>location</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam at perspiciatis libero deserunt modi quae!</p>
+            <div class="about-us-panel-pictures">
+            <h1>Location:</h1>
+            <iframe width="100%" height="85%" id="gmap_canvas" src="https://maps.google.com/maps?q=gousthouse%20mitterbach&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ></iframe> 
+            </div>
+            <div class="about-us-panel">
+                <h1><img height="30px"src="static/images/ZwGQrvVeNShT4TzMPpI9.png"></h1>
+                <p>Cím: 3224 Grabnersiedlung 2, Mitterbach am Erlaufsee. <br><br>
+                    A vendégház Ausztriában, a Mitterbach am Erlaufsee nevű kis faluban található, 370 kilóméterre Budapesttől a Gemeindealpe lábánál, a sífelvonótól mindössze 50 méterre.                                         
+                </p>
+            </div>
+            <div class="downarrow"><a href="#rooms"><img class="downarrowimg" src="static/images/pngaaa.com-92298.png"></a></div>
         </section>
+
+        
         <section id="rooms">
-                <h1>rooms</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam at perspiciatis libero deserunt modi quae!</p>
+            <div class="rooms-panel">
+                <h1>Rooms:</h1>
+                <p>Az egész ház táboroztatásra lett kialakítva, osztrák stílusban, nagy közösségi helyiséggel, külön férfi és női mosdókkal, összesen 34 férőhellyel 2,4,6 és 8 ágyas szobákkal.                  
+                </p>
+                
+                <!--slidershow middle-->
+                
+                <div class="room-details-container">
+                    <button id="roomsslideright" class="rooms-slide-right">&#8250;</button>
+                    <button id="roomsslideleft" class="rooms-slide-left">&#8249;</button>
+                    <div class="slides">
+                    
+                        <input type="radio" name="radio-btn" id="radio1" checked>
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <input type="radio" name="radio-btn" id="radio5">
+                        <input type="radio" name="radio-btn" id="radio6">
+                        <input type="radio" name="radio-btn" id="radio7">
+                        <input type="radio" name="radio-btn" id="radio8">
+                            
+                            <div class="slide s1"><img src="static/images/IMG_3688 (1).jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_3707.jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_4356 (1).jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_0843 (2).jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_3686 (2).jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_5767.png"></div>
+                            <div class="slide"><img src="static/images/IMG_3707.jpg"></div>
+                            <div class="slide"><img src="static/images/IMG_1348 (2).jpg"></div>                            
+                    </div>
+                    
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                            <label for="radio5" class="manual-btn"></label>
+                            <label for="radio6" class="manual-btn"></label>
+                            <label for="radio7" class="manual-btn"></label>
+                            <label for="radio8" class="manual-btn"></label>
+                        </div>
+                </div>
+                </div>
+                <div class="downarrow"><a href="#activities"><img class="downarrowimg" src="static/images/pngaaa.com-92298.png"></a></div>
+        </section>
+
+
+        <section id="activities">
+            <div class="about-us-panel">
+                <h1>Activities:</h1>
+                <p>Gyermek és felnőtt táborok szervezésével foglalkozunk. Egész évben szeretettel várjuk a táborozókat, télen sítáboroknak, az év többi részében pedig sporttáboroknak, iskolai kirándulásoknak adunk otthont.                    
+                </p>
+            </div>
+            <div class="downarrow"><a href="#contact"><img class="downarrowimg" src="static/images/pngaaa.com-92298.png"></a></div>
+        </section>
+        <section id="contact">
+            <div class="about-us-panel">
+                <h1>Activities:</h1>
+                <p>Gyermek és felnőtt táborok szervezésével foglalkozunk. Egész évben szeretettel várjuk a táborozókat, télen sítáboroknak, az év többi részében pedig sporttáboroknak, iskolai kirándulásoknak adunk otthont.                    
+                </p>
+            </div>
         </section>
     </div>
     
     <script src="static/javascript/ghm.js"></script>
 </body>
 </html>
+
