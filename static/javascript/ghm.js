@@ -53,17 +53,25 @@ let prevScrollpos = window.pageYOffset;
 function myFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 350) {
     let wrapper = document.querySelector('#wrapper1');
+    document.getElementById("navbar").style.cssText =`background-color:rgba(0, 0, 0, 0.158);`;
     wrapper.className = 'wrapper-1-dark';
   } else {
     let wrapper = document.querySelector('#wrapper1');
+    document.getElementById("navbar").style.cssText =`background-color:transparent;`;
     wrapper.className = 'wrapper-1';
   }
 
   let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
+    document.getElementById("navbar").style.height = '7em';
+    document.getElementById("youthhostel").style.fontSize = "16px";
+    document.getElementById("youthhostel").style.marginTop = "0";
   } else {
-    document.getElementById("navbar").style.top = "-1.5em";
+    document.getElementById("navbar").style.height = "4em";
+    document.getElementById("youthhostel").style.fontSize = "13px";
+    document.getElementById("youthhostel").style.marginTop = "-9px";
+
+
   }
   prevScrollpos = currentScrollPos;
 }
@@ -119,4 +127,46 @@ function roomsSlide(e){
       radio6.checked = true;
     }
   }
+}
+
+// page animations
+
+const bgpic = document.querySelector('#wrapper1');
+
+
+const tl = new TimelineMax();
+
+
+tl.fromTo(bgpic,0.2,{transform:'scale(1)'}, {transform:'scale(1.3)',ease: "power2.out"});
+tl.fromTo(bgpic,2,{transform:'scale(1.3)'}, {transform:'scale(1)',ease: "power2.out"});
+
+
+// read covid details
+
+const readdetailsbtn = document.querySelector('#readdetailsbtn').addEventListener('click',readDetails);
+
+function readDetails(){
+  const covidclose = document.querySelector('#covidclose');
+  const coviddetails = document.querySelector('#covidinfo');
+  
+  document.body.style.cssText = `pointer-events: none;   ;
+  overflow-y: hidden;`;
+  
+  coviddetails.style.cssText =`opacity:1; pointer-events: auto;`;
+  covidclose.style.cssText =`opacity:1; pointer-events: auto`;
+
+  
+  
+}
+//close details 
+const covidclose = document.querySelector('#covidclose');
+
+covidclose.addEventListener('click',cClose);
+
+function cClose() {
+  document.body.style.cssText = `pointer-events: auto;   
+  overflow-y: auto; height:100%`;
+  const coviddetails = document.querySelector('#covidinfo');
+  coviddetails.style.cssText =`opacity:0; pointer-events: none;`;
+  covidclose.style.cssText =`opacity:0; pointer-events: none;`;
 }
