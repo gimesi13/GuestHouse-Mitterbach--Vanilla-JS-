@@ -66,10 +66,14 @@ function myFunction() {
     document.getElementById("navbar").style.height = '7em';
     document.getElementById("youthhostel").style.fontSize = "16px";
     document.getElementById("youthhostel").style.marginTop = "0";
+    document.getElementById("navUl").style.marginTop = "0";
+
   } else {
     document.getElementById("navbar").style.height = "4em";
     document.getElementById("youthhostel").style.fontSize = "13px";
     document.getElementById("youthhostel").style.marginTop = "-9px";
+    document.getElementById("navUl").style.marginTop = "-1.5em";
+
 
 
   }

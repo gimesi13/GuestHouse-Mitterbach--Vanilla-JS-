@@ -23,12 +23,27 @@ html {
     font-size:12px;
     font-weight: 500;
     text-shadow: 1px 1px 7px #000000;
-    z-index: 0;
-    
-    
-    
+    z-index: 0;  
+       
 }
 
+/*media*/
+
+@media only screen and (max-width: 700px){
+    .gallery-div,
+    .contact-div{
+        z-index: -1;
+        position:fixed;
+        pointer-events: none;
+        opacity:0;
+    }
+}
+@media only screen and (min-width: 700px){
+    .contactnav,
+    .gallerynav{
+        font-size:0px;
+    }
+}
 /*div1*/
 .wrapper-1{  
     display:flex;
@@ -79,12 +94,13 @@ html {
         position:fixed;
         width: 100%;
         height:7em;
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(10px);
         z-index: 100;
         transition: 0.2s ease;
     }
         /*left section*/
         .header-left{
+            flex: 1;
             display:flex;
             column-gap: 3vw;
             justify-content: flex-start;
@@ -95,7 +111,15 @@ html {
         .header-left, div{
             align-items: center;
         }
-        
+        .hamburger-menu-div{
+            transition:opacity 0.2s;
+        }
+        .hamburger-menu-div:hover{
+            opacity:0.75;
+        }
+        .hamburger-menu-div:active{
+            opacity:0.4;
+        }
         .hamburger-menu-div,
         .gallery-image-div,
         .phone-image-div{
@@ -137,6 +161,16 @@ html {
             margin-top:4px;
         }
         /*middle section*/
+        .header-middle{
+            flex: 2;
+            white-space: nowrap;
+        }
+        .header-middle a:hover{
+            opacity:0.7;
+        }
+        .header-middle a:active{
+            opacity:0.5;
+        }
         .header-middle a{
             transition: all 0.2s;
             color:white;
@@ -151,6 +185,7 @@ html {
         }
         /*right section*/
         .header-right{
+            flex: 1;
             display:flex;
             justify-content: flex-end;
             width:26vw;
@@ -168,28 +203,29 @@ html {
             transition: all 0.2s;
         }
         .book-now-btn:hover{
-            background-color:rgba(0, 0, 0, 0.808);
+            opacity: 0.7;
         }
         .book-now-btn:active{
-            background-color:rgba(0, 0, 0, 0.274);
+            opacity: 0.5;
         }
         /*nav ul*/
+
         .nav-ul{
             padding:5px;
-            margin-left: 2vw;
+            padding-left: 2vw;
             display:flex;
             flex-direction: column;
             row-gap: 0.5em;
             align-items: flex-start;
             color:white;
-            z-index: 0;
+            z-index: -1;
             position:absolute;
-            top:85px;
+            top:84px;
+            padding-top:6px;
             left:0;
             font-size: 2em;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+
 
 
         }
@@ -208,22 +244,29 @@ html {
             color:white;
             text-decoration: none;
         }
+
         .nav-ul-active{
+
+            backdrop-filter: blur(5px);
             padding:5px;
-            margin-left: 2vw;
+            padding-left:2vw;
             display:flex;
             flex-direction: column;
             row-gap: 0.5em;
             align-items: flex-start;
             color:white;
-            z-index: 1000;
+            z-index: 100;
             position:absolute;
-            top:85px;
+            top:84px;
             left:0;
             font-size: 2em;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+            padding-top:6px;
+            transition: all 0.5s ease-in-out;
+            transition: margin-top 0.2s;
+
         }
         .nav-ul-active div{
             vertical-align: middle;
@@ -231,6 +274,9 @@ html {
             transition: all 0.5s;
             height:1em;
             cursor: pointer;
+        }
+        .nav-ul-active div:hover{
+            padding-left: 0.5em;
         }
         .nav-ul-active div a{
             color:white;
@@ -292,6 +338,7 @@ html {
             top:15%;
             right:10%;
             transition:0.2s;
+            pointer-events: none;
         }
         .covid-close:hover{
             opacity: 0.6;
@@ -357,14 +404,25 @@ html {
         }
 
         .downarrow{
+            padding:3px;
+            border-radius: 3px;
             z-index: 2;
             position: absolute;
             font-size:60px;
             bottom: 0;
             cursor: pointer;
+            transition:all 0.3s ease;
+        }
+
+        .downarrow:hover{
+            background-color:rgba(0, 0, 0, 0.482);
+        }
+        .downarrow:hover .downarrowimg{
+            width: 0.85em;
         }
         
         .downarrowimg{
+            transition:all 0.3s ease;
             width: 0.7em;
             animation: bounce 3s infinite;
         }
@@ -380,7 +438,6 @@ html {
               transform: translateY(-15px);
             }
           }
-
 
 
 section{
@@ -623,9 +680,9 @@ section#aboutus p{
     -webkit-box-shadow: -1px -34px 50px 35px rgba(0, 0, 0, 0.89); 
     box-shadow: -1px -34px 50px 35px rgba(0, 0, 0, 0.9);
     background-color:rgba(0, 0, 0, 0.9);
-    margin-top:10vh;
+    margin-top:9vh;
     width:100vw;
-    height:90vh;
+    height:91vh;
 }
 .contact-panel h1{
     padding:0.5em;
