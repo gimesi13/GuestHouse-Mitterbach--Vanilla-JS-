@@ -55,12 +55,16 @@ function myFunction() {
     let wrapper = document.querySelector('#wrapper1');
     document.getElementById("navbar").style.cssText =`background-color:rgba(0, 0, 0, 0.158);`;
     wrapper.className = 'wrapper-1-dark';
+
+    document.getElementById("downarrow").style.cssText =`opacity:0;`;
   } else {
     let wrapper = document.querySelector('#wrapper1');
     document.getElementById("navbar").style.cssText =`background-color:transparent;`;
     wrapper.className = 'wrapper-1';
-  }
 
+    document.getElementById("downarrow").style.cssText =`opacity:1;`;
+  }
+// navbar scroll behaviour
   let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.height = '7em';
@@ -113,7 +117,8 @@ function roomsSlide(e){
       radio7.checked = true;
     } else if(radio7.checked === true){
       radio8.checked = true;
-    }
+    }else if(radio8.checked === true){
+      radio1.checked = true;}
   } else if(e.target.id === 'roomsslideleft'){
     if(radio8.checked === true){
       radio7.checked = true;
@@ -129,6 +134,8 @@ function roomsSlide(e){
       radio5.checked = true;
     } else if(radio7.checked === true){
       radio6.checked = true;
+    } else if(radio1.checked === true){
+      radio8.checked = true;
     }
   }
 }
@@ -153,8 +160,7 @@ function readDetails(){
   const covidclose = document.querySelector('#covidclose');
   const coviddetails = document.querySelector('#covidinfo');
   
-  document.body.style.cssText = `pointer-events: none;   ;
-  overflow-y: hidden;`;
+  document.body.style.cssText = `pointer-events: none;`;
   
   coviddetails.style.cssText =`opacity:1; pointer-events: auto;`;
   covidclose.style.cssText =`opacity:1; pointer-events: auto`;
@@ -173,4 +179,79 @@ function cClose() {
   const coviddetails = document.querySelector('#covidinfo');
   coviddetails.style.cssText =`opacity:0; pointer-events: none;`;
   covidclose.style.cssText =`opacity:0; pointer-events: none;`;
+}
+
+// mountain images pop out
+const mountainimg = document.querySelector('.mountains-container');
+
+mountainimg.addEventListener('click',mountainClick);
+
+function mountainClick(e){
+  const image= e.target;
+    if (image.id === 'gemeindeimg'){
+      //create the div and the img
+      let mountainpanel = document.querySelector('#activities');
+      let gemeindebigContainer = document.createElement('div');
+      gemeindebigContainer.className = 'gemeindebig-container';
+      let gemeindebig = document.createElement('img');
+      gemeindebig.src= `static/images/gemeindealpe-dummy-pic.jpg`;
+      gemeindebig.className = 'gemeindebig';
+      gemeindebigContainer.appendChild(gemeindebig);
+      mountainpanel.appendChild(gemeindebigContainer);
+
+     // create a quit button with function
+      let quitbutton = document.createElement('img');
+      quitbutton.className = 'quit-button';
+      quitbutton.src = 'static/images/white-x-mark-icon-327097.png';
+      quitbutton.onclick = closeImg;
+      gemeindebigContainer.appendChild(quitbutton);
+      // block body from pointer events and scroll
+      document.body.style.overflow = 'hidden';
+
+    } else if (image.id === 'mariazellimg'){
+      //create the div and the img
+      let mountainpanel = document.querySelector('#activities');
+      let gemeindebigContainer = document.createElement('div');
+      gemeindebigContainer.className = 'gemeindebig-container';
+      let gemeindebig = document.createElement('img');
+      gemeindebig.src= `static/images/mariazell.jpg`;
+      gemeindebig.className = 'gemeindebig';
+      gemeindebigContainer.appendChild(gemeindebig);
+      mountainpanel.appendChild(gemeindebigContainer);
+
+     // create a quit button with function
+      let quitbutton = document.createElement('img');
+      quitbutton.className = 'quit-button';
+      quitbutton.src = 'static/images/white-x-mark-icon-327097.png';
+      quitbutton.onclick = closeImg;
+      gemeindebigContainer.appendChild(quitbutton);
+      // block body from pointer events and scroll
+      document.body.style.overflow = 'hidden';
+
+    } else if (image.id === 'annabergimg'){
+      //create the div and the img
+      let mountainpanel = document.querySelector('#activities');
+      let gemeindebigContainer = document.createElement('div');
+      gemeindebigContainer.className = 'gemeindebig-container';
+      let gemeindebig = document.createElement('img');
+      gemeindebig.src= `static/images/annaberg.jpg`;
+      gemeindebig.className = 'gemeindebig';
+      gemeindebigContainer.appendChild(gemeindebig);
+      mountainpanel.appendChild(gemeindebigContainer);
+
+     // create a quit button with function
+      let quitbutton = document.createElement('img');
+      quitbutton.className = 'quit-button';
+      quitbutton.src = 'static/images/white-x-mark-icon-327097.png';
+      quitbutton.onclick = closeImg;
+      gemeindebigContainer.appendChild(quitbutton);
+      // block body from pointer events and scroll
+      document.body.style.overflow = 'hidden';
+    }
+}
+// mountain images pop out end
+
+function closeImg(e){
+  e.target.parentElement.remove();
+  document.body.style.overflow = 'auto';
 }
