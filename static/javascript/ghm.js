@@ -51,32 +51,37 @@ window.onscroll = function() {myFunction()};
 
 let prevScrollpos = window.pageYOffset;
 function myFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 350) {
-    let wrapper = document.querySelector('#wrapper1');
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 250) {
+    let wrapper = document.querySelector('#homewrapper');
     document.getElementById("navbar").style.cssText =`background-color:rgba(0, 0, 0, 0.158);`;
-    wrapper.className = 'wrapper-1-dark';
+    wrapper.style.cssText =`background-color:rgba(0, 0, 0, 0.5);`;
+    //document.getElementsByClassName("nav-ul-active").style.cssText =`background-color:rgba(0, 0, 0, 0.158);`;
 
     document.getElementById("downarrow").style.cssText =`opacity:0;`;
   } else {
-    let wrapper = document.querySelector('#wrapper1');
+    let wrapper = document.querySelector('#homewrapper');
     document.getElementById("navbar").style.cssText =`background-color:transparent;`;
-    wrapper.className = 'wrapper-1';
+    wrapper.style.cssText =`background-color:rgba(0, 0, 0, 0);`;
+
+    //document.getElementsByClassName("nav-ul-active").style.cssText =`background-color:rgba(0, 0, 0, 0);`;
 
     document.getElementById("downarrow").style.cssText =`opacity:1;`;
   }
 // navbar scroll behaviour
   let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.opacity = "1";
     document.getElementById("navbar").style.height = '7em';
     document.getElementById("youthhostel").style.fontSize = "16px";
     document.getElementById("youthhostel").style.marginTop = "0";
-    document.getElementById("navUl").style.marginTop = "0";
+    document.getElementById("navUl").style.marginTop = "0.5em";
 
   } else {
+    document.getElementById("navbar").style.opacity = "1";
     document.getElementById("navbar").style.height = "4em";
     document.getElementById("youthhostel").style.fontSize = "13px";
     document.getElementById("youthhostel").style.marginTop = "-9px";
-    document.getElementById("navUl").style.marginTop = "-1.5em";
+    document.getElementById("navUl").style.marginTop = "-1em";
 
 
 
@@ -142,14 +147,18 @@ function roomsSlide(e){
 
 // page animations
 
-const bgpic = document.querySelector('#wrapper1');
+const bgpic = document.querySelector('#home');
+const maincontent = document.querySelector('.main-content-flexbox')
+const navbar = document.querySelector('#navbar')
 
 
 const tl = new TimelineMax();
 
 
-tl.fromTo(bgpic,0.2,{transform:'scale(1)'}, {transform:'scale(1.3)',ease: "power2.out"});
-tl.fromTo(bgpic,2,{transform:'scale(1.3)'}, {transform:'scale(1)',ease: "power2.out"});
+
+tl.fromTo(bgpic,1.8,{backdropFilter: 'brightness(0%)'}, {backdropFilter: 'brightness(100%)'});
+tl.fromTo(navbar,0.8,{opacity: '0'}, {opacity: '1'});
+tl.fromTo(maincontent,2,{opacity: '0'}, {opacity: '1'}); 
 
 
 // read covid details
