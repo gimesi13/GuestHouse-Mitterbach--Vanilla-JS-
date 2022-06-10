@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     
     
     <title>GuestHouse Mitterbach</title>
@@ -24,40 +27,48 @@
         <!--header bar-->
         <div id="navbar" class="header-bar-invisible">
             <!--left section-->
-            <div class="header-left"> 
-                <div id="hamburgermenu" class="hamburger-menu-div"><img id="hamburgerimage" class="hamburgerimg" src="static/images/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png"></div>
-                <div class="contact-div">
-                    <div class="phone-image-div"><a href="#contact"><img class="phoneimg" src="static/images/pngfind.com-telephone-icon-png-369746.png"></a></div>
-                    <div class="contact">
-                        <a href="#contact">contact</a>
+            <div id="headerleft" class="header-left"> 
+                    <div id="hamburgermenu" class="hamburger-menu-div">
+                        <img id="hamburgerimage" class="hamburgerimg" src="static/images/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png">
                     </div>
-                </div>
-                <div class="gallery-div">
-                    <div class="gallery-image-div">
-                        <a href="#gallery">
-                            <img class="galleryimg" src="static/images/pngaaa.com-1915726.png"/>
+                    <div id="nav" class="contact-div">
+                        <a href="#contact">
+                            <div class="phone-image-div">
+                                <img class="phoneimg" src="static/images/pngfind.com-telephone-icon-png-369746.png">
+                                
+                                <div class="contact">
+                                    contact
+                                </div>
+                            </div>
                         </a>
                     </div>
-                    <div class="gallery">
-                        <a href="#gallery">gallery</a>
+
+                <div id="nav" class="gallery-div">
+                    <a href="#gallery">
+                    <div class="gallery-image-div">
+                        <img class="galleryimg" src="static/images/pngaaa.com-1915726.png"/>
+                            <div class="gallery">
+                                gallery
+                            </div>
                     </div>
+                    </a>
                 </div>
             </div>
             
             <!--nav ul-->
             <div id="navUl" class="nav-ul">
-                <div><a href="#home">Home</a></div>
-                <div><a href="#aboutus">About Us</a></div>
-                <div><a href="#location">Location</a></div>
-                <div><a href="#rooms">Rooms</a></div>
-                <div><a href="#activities">Activities</a></div>
-                <div><a class="gallerynav" href="#gallery">Gallery</a></div>
-                <div><a class="contactnav" href="#contact">Contact</a></div>
+                <div id="nav"><a href="#home">Home</a></div>
+                <div id="nav"><a href="#rooms">Rooms</a></div>
+                <div id="nav"><a href="#aboutus">About Us</a></div>
+                <div id="nav"><a href="#location">Location</a></div>
+                <div id="nav"><a class="ectivitiesnav" href="#activities">Slopes</a></div>
+                <div id="nav"><a class="gallerynav" href="#gallery">Gallery</a></div>
+                <div id="nav"><a class="contactnav" href="#contact">Contact</a></div>
             </div>
             <!--middle section-->
             <div id="headermiddle" class="header-middle">
                 <a href="#home">
-                    <div  id="headermiddle">Guesthouse Mitterbach</div>
+                    <div class="header-middle"  id="headermiddle">Guesthouse Mitterbach</div>
                     <div id="youthhostel" class="youth-hostel">- youth hostel -</div>
                 </a>
             </div>
@@ -66,29 +77,29 @@
                 <button class="book-now-btn">BOOK NOW</button>
             </div>
         </div>
+        <div id="covidinfo" class="covid-info">
+            <span>Kedves Vendégeink!</span>
+            <br><br>  <br><br> 
+            * Az aktuális kormányzati rendeletnek megfelelve 2022. március 7-től a maszk viselete a közösségi terekben nem kötelező.               
+            <br><br>  
+            
+            * Vendégeink és munkatársaink védelme érdekében a biztonságos távolság tartását és a rendszeres kézfertőtlenítést továbbra is ajánljuk.               
+            <br><br>  
+
+            
+            * A járványügyi korlátozások alapján minden szállodánkban védettségi igazolvány nélkül fogadhatjuk vendégeinket.<br><br>             
+            <br><br> 
+            
+            <span>Együttműködésüket köszönjük!</span>
+            
+        </div>        
+        <button id="covidclose" class="covid-close"><img src="static/images/white-x-mark-icon-327097.png"></button>
         <section id="home">
             <div id="homewrapper" class="home-wrapper"></div>
             <div id="parallaxhome" class="parallax-window-home" data-parallax="scroll" data-image-src="static/images/IMG_5767.png"></div>
 
             <div class="main-content-flexbox"><div class="main-content">Important information regarding COVID-19</div>
             <div><button id="readdetailsbtn" class="read-details-btn">READ DETAILS</button></div>
-            <div id="covidinfo" class="covid-info">
-                <span>Kedves Vendégeink!</span>
-                <br><br>  <br><br> 
-                * Az aktuális kormányzati rendeletnek megfelelve 2022. március 7-től a maszk viselete a közösségi terekben nem kötelező.               
-                <br><br>  
-                
-                * Vendégeink és munkatársaink védelme érdekében a biztonságos távolság tartását és a rendszeres kézfertőtlenítést továbbra is ajánljuk.               
-                <br><br>  
-
-                
-                * A járványügyi korlátozások alapján minden szállodánkban védettségi igazolvány nélkül fogadhatjuk vendégeinket.<br><br>             
-                <br><br> 
-                
-                <span>Együttműködésüket köszönjük!</span>
-                
-            </div>        
-            <button id="covidclose" class="covid-close"><img src="static/images/white-x-mark-icon-327097.png"></button>
             
             <div id="downarrow" class="downarrow"><a href="#rooms"><img class="downarrowimg" src="static/images/pngaaa.com-92298.png"></a></div>
         </div>
@@ -106,7 +117,7 @@
                 <h1><img height="30px"src="static/images/pngfind.com-white-house-png-3239805.png"></h1>
                 <p>Az egész ház táboroztatásra lett kialakítva, osztrák stílusban, nagy közösségi helyiséggel, külön férfi és női mosdókkal, összesen 34 férőhellyel 2,4,6 és 8 ágyas szobákkal. A ház egészben is foglalható.  -->
                 
-                <button class="book-now-btn">CONTACT</button>
+                <button class="book-now-btn"> <a href="#contact">CONTACT</a></button>
                 <br><br>                
                 </p>
                 <h1><img height="30px"src="static/images/pngaaa.com-160937.png"></h1>
@@ -128,7 +139,7 @@
                         </div>
                     </div>
                     <div class="rooms-pictures-container">
-                        <div class="roooms-info">4 ágyas szállodánkban:
+                        <div class="roooms-info">4 ágyas szoba:
                             <br><br>
                             Már €20.-tól*
                             <br><br>
@@ -263,13 +274,9 @@
             <section id="gallery">
                 <div id="parallaxhome" class="parallax-window-location" data-parallax="scroll" data-image-src="static/images/gallery-parallax.jpg"></div>
 
-                <div class="rooms-panel">
-                    <h1>Gallery:</h1>
-            
-                    
+                <div class="gallery-panel">
                     <!--slidershow middle-->
-                    
-                    <div class="room-details-container">
+                    <div class="gallery-container">
                         <button id="roomsslideright" class="rooms-slide-right">&#8250;</button>
                         <button id="roomsslideleft" class="rooms-slide-left">&#8249;</button>
                         <div class="slides">
@@ -283,15 +290,19 @@
                                 <input type="radio" name="radio-btn" id="radio6">
                                 <input type="radio" name="radio-btn" id="radio7">
                                 <input type="radio" name="radio-btn" id="radio8">
+                                <input type="radio" name="radio-btn" id="radio9">
+                                <input type="radio" name="radio-btn" id="radio10">
                                 
-                                <div id="s1" class="slide s1"><img src="static/images/IMG_3688 (1).jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_3707.jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_4356 (1).jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_0843 (2).jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_3686 (2).jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_3724 (1).jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_3707.jpg"></div>
-                                <div class="slide"><img src="static/images/IMG_1348 (2).jpg"></div> 
+                                <div id="s1" class="slide s1"><img src="static/images/gallery-01.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-02.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-03.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-04.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-05.jpg"></div>
+                                <div class="slide"><img src="static/images//gallery-06.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-07.jpg"></div>
+                                <div class="slide"><img src="static/images/gallery-08.jpg"></div> 
+                                <div class="slide"><img src="static/images/gallery-09.jpg"></div> 
+                                <div class="slide"><img src="static/images/gallery-10.jpg"></div> 
                                                            
                                 <div class="navigation-manual">
                                     <div class="radio-item"><label for="radio1" class="manual-btn"></label></div>
@@ -302,71 +313,51 @@
                                     <div class="radio-item"><label for="radio6" class="manual-btn"></label></div>
                                     <div class="radio-item"><label for="radio7" class="manual-btn"></label></div>
                                     <div class="radio-item"><label for="radio8" class="manual-btn"></label></div>
-                            
+                                    <div class="radio-item"><label for="radio9" class="manual-btn"></label></div>
+                                    <div class="radio-item"><label for="radio10" class="manual-btn"></label></div>                            
                                 </div>
-                        </div>
-                        
-                            
+                        </div>                       
                     </div>
-                </div>
-                
+                </div>                
         </section>
         <section id="contact">
             <div class="contact-panel">
                 <div class="contact-stuff-container">
                     <div class="contact-info">
-                        <h1>Contact:</h1>
-                        <p>Kapcsolat:
-                            <br><br>
-                        Foglalás itt: guesthousemitterbach@gmail.com
-                        <br><br>
-                        
-                        Cím: <br>3224 Grabnersiedlung 2, Mitterbach am Erlaufsee
-                        Térkép
-                        <br><br>
+                        <h1>Contact Us:</h1>
+                        <br>
 
-                        
-                        Szecsei Dorottya §§ kép<br>
+                        Szecsei Dorottya<br>
                         Tel: +36307253984
                         <br><br>
 
-                        Gimesi Gergely §§ kép<br>
+                        Gimesi Gergely<br>
                         Tel: +36304939729
                         <br><br>
-
-                        Email: guesthousemitterbach@gmail.com
-                        
+                        Email:<br>
+                        guesthousemitterbach@gmail.com
                         <br><br>
+                        
+                        Cím: <br>3224 Grabnersiedlung 2,<br>
+                        Mitterbach am Erlaufsee<br>
+                        <a href="https://www.google.com/maps/place/Guesthouse+Mitterbach/@47.8107634,15.2873405,16z/data=!4m12!1m2!2m1!1sguesthouse+mitterbach!3m8!1s0x4772042e7feef2bb:0x113db2ec0c0c4ba4!5m2!4m1!1i2!8m2!3d47.8094247!4d15.2889218!15sChVndWVzdGhvdXNlIG1pdHRlcmJhY2iSAQZob3N0ZWw" target="_blank"><button class="open-maps-btn">Open Maps</button></a>
 
                     </p>
                     <br>
                 </div>
-                <div class="contact-info">
-                    <h1>More stuff:</h1>
-                    <p>Fos:
-                        <br><br>
-                        Foglalás itt: guesthousemitterbach@gmail.com
-                        <br><br>
-
-                        Cím: <br>3224 Grabnersiedlung 2, Mitterbach am Erlaufsee
-                        Térkép
-                        <br><br>
-
-                        
-                        Szecsei Dorottya §§ kép<br>
-                        Tel: +36307253984
-                        <br><br>
-
-                        Gimesi Gergely §§ kép<br>
-                        Tel: +36304939729
-                        <br><br>
-
-                        Email: guesthousemitterbach@gmail.com
-                        
-                        <br><br>
-
-                    </p>
-                    <br>
+                <div class="send-us-email">
+                    <form class="email-form" action="mailto:guesthousemitterbach@gmail.com"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    name="EmailForm">
+                        Name:<br>
+                        <input type="text" size="30" name="Contact-Name"><br><br>
+                        Email:<br>
+                        <input type="email" size="30" name="Contact-Email"><br><br> 
+                        Message:<br> 
+                        <textarea name="Contact-Message" rows="6″ cols="20″></textarea><br><br> 
+                        <button class="send-emai-btn" type="submit" value="Submit">SEND</button>
+                    </form> 
                 </div>
                 </div>
 

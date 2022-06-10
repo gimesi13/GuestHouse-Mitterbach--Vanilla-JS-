@@ -82,12 +82,26 @@ function myFunction() {
     document.getElementById("youthhostel").style.fontSize = "13px";
     document.getElementById("youthhostel").style.marginTop = "-9px";
     document.getElementById("navUl").style.marginTop = "-1em";
-
-
-
   }
   prevScrollpos = currentScrollPos;
 }
+
+//nav items underline
+const nav = document.querySelectorAll('#nav');
+const sectonAll = document.querySelectorAll('section[id]');
+window.addEventListener('scroll',() => {
+  const scrollY = window.pageYOffset;
+  sectonAll.forEach((current)=>{
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop -200;
+    const sectionId = current.getAttribute('id');
+    if(scrollY > sectionTop && scrollY < sectionTop + sectionHeight){
+      document.querySelector('div a[href*="'+sectionId + '"]').classList.add('active');
+    } else {
+      document.querySelector('div a[href*="'+sectionId + '"]').classList.remove('active');
+    }
+  });
+});
 
 // rooms slider
 
@@ -106,8 +120,12 @@ function roomsSlide(e){
   const radio6 = document.querySelector('#radio6');
   const radio7 = document.querySelector('#radio7');
   const radio8 = document.querySelector('#radio8');
+  const radio9 = document.querySelector('#radio9');
+  const radio10 = document.querySelector('#radio10');
 
   if(e.target.id === 'roomsslideright'){
+    console.log('iwork');
+
     if(radio1.checked === true){
       radio2.checked = true;
     } else if(radio2.checked === true){
@@ -123,8 +141,13 @@ function roomsSlide(e){
     } else if(radio7.checked === true){
       radio8.checked = true;
     }else if(radio8.checked === true){
+      radio9.checked = true;
+    }else if(radio9.checked === true){
+      radio10.checked = true;
+    }else if(radio10.checked === true){
       radio1.checked = true;}
   } else if(e.target.id === 'roomsslideleft'){
+    console.log('iwork');
     if(radio8.checked === true){
       radio7.checked = true;
     } else if(radio2.checked === true){
@@ -140,8 +163,11 @@ function roomsSlide(e){
     } else if(radio7.checked === true){
       radio6.checked = true;
     } else if(radio1.checked === true){
+      radio10.checked = true;
+    } else if(radio9.checked === true){
       radio8.checked = true;
-    }
+    } else if(radio10.checked === true){
+      radio9.checked = true;}
   }
 }
 
@@ -177,7 +203,7 @@ function readDetails(){
   
   
 }
-//close details 
+//close details close
 const covidclose = document.querySelector('#covidclose');
 
 covidclose.addEventListener('click',cClose);
@@ -264,3 +290,9 @@ function closeImg(e){
   e.target.parentElement.remove();
   document.body.style.overflow = 'auto';
 }
+// proximity scroll on gallery mouseover
+let gallerypanel = document.querySelector('.gallery-panel');
+gallerypanel.onclick = function(){
+  document.getElementById("gallery").scrollIntoView({behavior: 'smooth'});
+}
+
