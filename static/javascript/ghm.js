@@ -19,7 +19,7 @@ function hamburgerclick(){
         hamburgermenu.innerHTML ='';
         hamburgermenu.appendChild(Xicon);
 
-    } else {
+    } else {        
         hamburger.className = "nav-ul";
         hamburgermenu.innerHTML ='';
         hamburgermenu.appendChild(hamburgerimage);
@@ -28,7 +28,7 @@ function hamburgerclick(){
 
 document.onclick = function(e){
 
-if(e.target.className!=='nav-ul-active' && e.target.className!=='hamburgerimg'){
+if(e.target.className!=='nav-ul-active' && e.target.className!=='hamburgerimg' && e.target.className!=='languagenav' && e.target.className!=='language-switcher-select-nav'){
     const hamburger = document.querySelector('#navUl');
     const hamburgerimage = document.createElement('img');
     hamburgerimage.src = `static/images/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png`;
@@ -103,6 +103,29 @@ window.addEventListener('scroll',() => {
   });
 });
 
+// media queries
+// Create a condition that targets viewports at least 768px wide
+const mediaQuery = window.matchMedia('(max-width: 700px)')
+
+function handleTabletChange(e) {
+  // Check if the media query is true
+  if (e.matches) {
+    // Then log the following message to the console
+    document.querySelector("#navlink-contact").href= "";
+    document.querySelector("#navlink-gallery").href= "";
+    console.log(document.querySelector("#navlink-contact").href);
+  } else {
+    document.querySelector("#navlink-contact").href= "#contact";
+    document.querySelector("#navlink-gallery").href= "#gallery";
+    console.log(document.querySelector("#navlink-contact").href);
+  }
+}
+
+// Register event listener
+mediaQuery.addListener(handleTabletChange)
+
+// Initial check
+handleTabletChange(mediaQuery)
 // rooms slider
 
 const roomsrightSlide = document.querySelector('#roomsslideright');
@@ -296,3 +319,17 @@ gallerypanel.onclick = function(){
   document.getElementById("gallery").scrollIntoView({behavior: 'smooth'});
 }
 
+// language selector
+const languages = document.querySelector("#languages")
+
+languages.addEventListener("change", langChange)
+
+
+function langChange(e){
+  if (e.target.value === "English"){
+    location.href = 'index.html';
+  } else if (e.target.value === "Deutsch"){
+    location.href = 'index.de.html';
+  } else if (e.target.value === "Magyar"){
+    location.href = 'index.hu.html';
+  }};
