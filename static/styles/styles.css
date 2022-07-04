@@ -47,7 +47,7 @@ html {
     bottom:0;
     left:0;
     right:0;
-    z-index: 0;
+    z-index: -1;
     background: transparent;
 }
 .parallax-window-rooms{
@@ -65,7 +65,7 @@ html {
     transition: all 1s ease;
     position: absolute;
     top:0;
-    bottom:-100%;
+    bottom:-150vh;
     left:0;
     right:0;
     z-index: 0;
@@ -84,8 +84,17 @@ html {
         pointer-events: none;
         opacity:0;
     }
-    .rooms-rows-container{
+    .rooms-rows-container,
+    .location-rows-container{
         flex-direction: column;
+        margin-bottom:0;
+    }
+    .rooms-column-container{
+        padding-bottom:8em;
+    }
+    .aboutus-rows-container{
+        flex-direction: column-reverse;
+        margin-top:0;
     }
     .rooms-info-panel{
         position:static;
@@ -93,9 +102,38 @@ html {
         margin-bottom:2em;
         min-width:280px
     }
-    .rooms-column-container{
-        padding-left:3em;
+
+    .about-us-panel-pictures{
+        width:85%;
     }
+    .about-us-panel-pictures:hover
+    {
+        width:90%;
+    }
+
+    .about-us-panel-pictures-main{
+        max-height:55vh;
+    }
+    .about-us-panel{
+        max-width:75%;
+    }
+    .page-header-2{
+        padding-bottom:2em;
+    }
+    /*loc*/
+    .location-panel-maps{
+        width:75%;
+        height:60vh;
+    }
+    .location-panel-maps:hover{
+        width:80%;
+    }
+    .page-header-3{
+        padding-top:4em;
+        padding-bottom:2em;
+    }
+
+
 }
 @media only screen and (min-width: 700px){
     .contactnav,
@@ -108,17 +146,63 @@ html {
     .nav-ul-active{
         margin-bottom:-2em;
     }
-    .rooms-rows-container{
+    /*roo*/
+    .rooms-rows-container,
+    .aboutus-rows-container,
+    .location-rows-container{
         flex-direction: row;
+        margin-bottom:7em;
+        margin-top:0;
+    }
+    .rooms-column-container{
+        padding-bottom:4em;
     }
     .rooms-info-panel{
         position:sticky;
         width: 42%;
         min-width:200px;  
     }
-    .rooms-column-container{
-        padding-left:6em;
+    /*abou*/
+    .about-us-panel-pictures{
+        width:50%;
+        height:60%;
+        position:sticky;
+        top:10em;
+        align-self: flex-start; 
     }
+    .location-panel-maps{
+        width:50%;
+        height:70vh;
+    }
+    .about-us-panel-pictures:hover,
+    .location-panel-maps:hover{
+        width:53%;
+    }
+    .about-us-panel-pictures-main{
+        max-height:60vh;
+    }
+    .about-us-panel{
+        max-width:18%;
+        position:sticky;
+        top:10em;
+        align-self: flex-start;
+    }
+    .page-header-2{
+        padding-bottom:2em;
+    }
+
+    /*loc*/
+    .location-panel-maps{
+        min-width:50%;
+        min-height: 60vh;
+    }
+    .page-header-3{
+        padding-top:4em;
+        padding-bottom:1em;
+    }
+
+
+
 }
 /*div1*/
 .wrapper-1{  
@@ -573,7 +657,6 @@ html {
 
 section{
     display:flex;
-    flex-direction: column;
     align-items: center;
     justify-content:center;
     width: 100%;
@@ -600,25 +683,23 @@ section#booknow,
 section#contact,
 section#activities,
 section#home,
-section#aboutus,
 section#location,
 section#gallery,
-section#contact{
+section#contact,
+section#aboutus{
     position: relative;
-    flex-direction: row;
     justify-content:space-evenly;
     align-items: center;
     flex-wrap: wrap;
     
     width: 100%;
-    height: 100vh;
-    min-height:600px;
+    min-height:100vh;
+    height:100%;
 }
 
 section#rooms{
     padding-top:7em;
     position: relative;
-    flex-direction: row;
     justify-content:center;
     align-items: center;
     flex-wrap: wrap;
@@ -627,6 +708,19 @@ section#rooms{
     width: 100%;
     height: 200%;
     min-height:600px;
+}
+section#aboutus{
+    position: relative;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding-bottom:8em;
+    
+    width: 100%;
+    height: 200%;
+    min-height:600px;
+    min-height:150vh;
 }
 h1{
     font-size: 2em;
@@ -638,24 +732,22 @@ p{
 .gallery-panel::-webkit-scrollbar,
 .gallery-container::-webkit-scrollbar,
 .about-us-panel::-webkit-scrollbar,
-.about-us-panel-pictures::-webkit-scrollbar {
+.about-us-panel-pictures::-webkit-scrollbar,
+.location-panel::-webkit-scrollbar,
+.location-panel-maps::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
-.about-us-panel-pictures:hover{
-    width: 48%;
-    height: 58%;
-}
+
 
 .about-us-panel,
 .about-us-panel-pictures{
+
     z-index:2;
     transition: all 0.5s ease;
     overflow-y:hidden;
-
+    
     padding:1.2em;
-    width: 44%;
-    height: 54%;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 7px );
@@ -663,12 +755,24 @@ p{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.about-us-panel-pictures,
+.location-panel-maps{
+    min-width: 300px;
+}
 
 .about-us-panel{
+
+    min-width:200px;
     height: 45%;
-    width: 18%;
     overflow:auto;
     transition: all 1s ease;
+
+    background: rgba(15, 15, 15, 0.566);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .aboutus-pic-hover{
     position:absolute;
@@ -691,13 +795,26 @@ p{
 }
 
 .about-us-panel-pictures-main{
-    height: 100%;
-    width: 100%;
+    width:100%;
     border-radius: 10px;
     object-fit: cover;
 }
 
 /*location*/
+section#location{
+    position: relative;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding-bottom:8em;
+    
+    width: 100%;
+    height: 210%;
+    min-height:600px;
+    min-height:110vh;
+}
+
 .location-wrapper{
     z-index: 0;
     position:absolute;
@@ -707,13 +824,47 @@ p{
     right:0;
 }
 
-/*rooms*/
+.location-panel,
+.location-panel-maps{
+    z-index:2;
+    transition: all 0.5s ease;
+    overflow-y:hidden;
 
+    padding:1.2em;
+
+    background: rgba(255, 255, 255, 0.056);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.location-panel{
+    background: rgba(15, 15, 15, 0.286);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    max-width:400px;
+    height: 45%;
+    overflow:auto;
+    transition: all 1s ease;
+}
+.location-panel-maps{
+    max-width:90%;
+    max-height:70vh;
+}
+/*rooms*/
+.page-header-1{
+    padding-top:1em;
+    padding-bottom:2em;
+}
 .rooms-column-container{
     background-color:rgba(0, 0, 0, 0.411);
-    padding-right:3em;
-    padding-top:3em;
-    padding-bottom:3em;
+    padding-right:4em;
+    padding-top:4em;
+    padding-left: 4em;
 
     display:flex;
     flex-direction: column;
@@ -739,6 +890,7 @@ p{
     align-self:flex-start;
     height: 45%;
     width: 18%;
+    min-width:320px;
     overflow:auto;
     transition: all 1s ease;
 }
@@ -751,11 +903,20 @@ p{
     right:0;
     background-color:rgba(0, 0, 0, 0.301);
 }
-.rooms-rows-container{
-    margin-bottom:7em;
+.rooms-rows-container,
+.aboutus-rows-container,
+.location-rows-container{
     width: 100%;
     justify-content: space-evenly;
     display:flex;
+    gap:5em;
+    position: relative;
+}
+.aboutus-rows-container{
+    margin-bottom:0;
+    min-height:120vh;
+    margin-left:3em;
+    margin-right:3em;
 }
 .rooms-img-container{
     padding:0;
@@ -793,7 +954,7 @@ p{
 
     padding-left:1.2em;
     min-width:300px;
-    max-width:600px;
+    max-width:500px;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 7px );
@@ -1101,8 +1262,6 @@ p{
 }
 
 .contact-stuff-container{
-    display:flex;
-
     overflow-wrap: break-word;
     width:100%;
     display:flex;
@@ -1150,7 +1309,7 @@ p{
     display:flex;
     flex-direction:column;
     background-color:rgba(44, 45, 46, 0.301);
-    max-width:55%;
+    max-width:65%;
     height:80%;
     gap:2vh;
     border-radius:5%;
@@ -1166,6 +1325,7 @@ p{
     padding:1.2em;
     width: 100%;
     height: 100%;
+    max-height:50vh;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 10px );
@@ -1179,14 +1339,18 @@ p{
 }
 
 .mountainimg-container{
-    height:100%;
-    max-width:60%
+    position:sticky;
+    top:0em;
+    height:50%;
+    min-width:40%;
+    
 }
 .mountainimg{
     border-radius: 10px;;
     transition:0.2s;
     height:100%;
-    max-width: auto;    
+    max-height:300px;
+    max-width: 100%;    
 }
 .mountainimg:hover{
     cursor:pointer;
@@ -1245,6 +1409,9 @@ p{
 
     /* senseless bubbles */
 /*aboutus*/
+.page-header-2{    
+    padding-top:4em;;
+}
 .bubble1{
     position:absolute;
     width:600px;
@@ -1384,9 +1551,7 @@ p{
 }
 
 /*activities*/
-section#activities a{
-    color:lightblue;
-}
+
 .bubble8{
     position:absolute;
     width:50px;
