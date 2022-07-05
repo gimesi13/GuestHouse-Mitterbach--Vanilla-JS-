@@ -313,11 +313,11 @@ function closeImg(e){
   e.target.parentElement.remove();
   document.body.style.overflow = 'auto';
 }
-// proximity scroll on gallery mouseover
-let gallerypanel = document.querySelector('.gallery-panel');
+// proximity scroll on gallery mouseover 
+/*let gallerypanel = document.querySelector('.gallery-panel');
 gallerypanel.onclick = function(){
   document.getElementById("gallery").scrollIntoView({behavior: 'smooth'});
-}
+}*/
 
 // language selector
 const languages = document.querySelector("#languages")

@@ -12,6 +12,7 @@ body{
     line-height:1.6;
     background-color:rgb(45, 49, 51);
     overflow-x:hidden;
+    max-width:100%;
 }
 /*body::-webkit-scrollbar{
     width: 0px;
@@ -65,7 +66,7 @@ html {
     transition: all 1s ease;
     position: absolute;
     top:0;
-    bottom:-150vh;
+    bottom:0;
     left:0;
     right:0;
     z-index: 0;
@@ -99,7 +100,6 @@ html {
     .rooms-info-panel{
         position:static;
         margin: 0 auto;
-        margin-bottom:2em;
         min-width:280px
     }
 
@@ -128,9 +128,18 @@ html {
     .location-panel-maps:hover{
         width:80%;
     }
-    .page-header-3{
+    .page-header-3,
+    .page-header-4{
         padding-top:4em;
         padding-bottom:2em;
+    }
+    /*slopes*/
+    .mountain-panel{
+        flex-direction: column;
+    }
+    .mountain-info{
+        padding-bottom:2em;
+        margin-right:0;
     }
 
 
@@ -159,8 +168,8 @@ html {
     }
     .rooms-info-panel{
         position:sticky;
-        width: 42%;
-        min-width:200px;  
+        width: 50%;
+        min-width:230px;
     }
     /*abou*/
     .about-us-panel-pictures{
@@ -196,9 +205,28 @@ html {
         min-width:50%;
         min-height: 60vh;
     }
-    .page-header-3{
+    .page-header-3,
+    .page-header-4{
         padding-top:4em;
         padding-bottom:1em;
+    }
+    /*slopes*/
+    .mountain-panel{
+        justify-content: row;
+    }
+    .mitt,
+    .ann{
+    margin-left:6em;
+    }
+    .mar{
+    margin-right:6em;
+    flex-direction: row-reverse;
+    }
+    .marimg{
+    margin-right:5vw;
+    }
+    .mountain-info{
+        margin-right:5vw;
     }
 
 
@@ -671,7 +699,7 @@ section{
     z-index: 0;
     position:absolute;
     top:0;
-    bottom:-1px;
+    bottom:0;
     left:0;
     right:0;
 }
@@ -693,7 +721,7 @@ section#aboutus{
     flex-wrap: wrap;
     
     width: 100%;
-    min-height:100vh;
+    min-height:101vh;
     height:100%;
 }
 
@@ -762,7 +790,7 @@ p{
 
 .about-us-panel{
 
-    min-width:200px;
+    min-width:230px;
     height: 45%;
     overflow:auto;
     transition: all 1s ease;
@@ -807,7 +835,6 @@ section#location{
     align-items: center;
     flex-wrap: wrap;
     gap: 3em;
-    padding-bottom:8em;
     
     width: 100%;
     height: 210%;
@@ -870,8 +897,7 @@ section#location{
     flex-direction: column;
     gap:3em;
     }
-.rooms-column-container img{
-}
+
 .rooms-info-panel{
     top:20%;
     left:5%;
@@ -890,7 +916,6 @@ section#location{
     align-self:flex-start;
     height: 45%;
     width: 18%;
-    min-width:320px;
     overflow:auto;
     transition: all 1s ease;
 }
@@ -915,8 +940,7 @@ section#location{
 .aboutus-rows-container{
     margin-bottom:0;
     min-height:120vh;
-    margin-left:3em;
-    margin-right:3em;
+
 }
 .rooms-img-container{
     padding:0;
@@ -953,7 +977,7 @@ section#location{
     overflow-y:hidden;
 
     padding-left:1.2em;
-    min-width:300px;
+    min-width:320px;
     max-width:500px;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -969,8 +993,13 @@ section#location{
 
     object-fit: contain;
 }
+/*gallery section*/
+section#gallery{
+    display:flex;
+    flex-direction: column;
+}
 .gallery-panel{
-    margin-top:4em;
+    margin-bottom:8em;
     overflow-y:hidden;
     z-index: 2;
     justify-content: space-evenly;
@@ -980,7 +1009,7 @@ section#location{
     padding:1.2em;
     padding-bottom:1.2em;
     width: 75%;
-    height: 70%;
+    height: 70vh;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 10px );
@@ -992,7 +1021,6 @@ section#location{
 
 .gallery-panel:hover{
     width: 78%;
-    height: 73%;
 }
 .gallery-container{
     overflow-y: hidden;
@@ -1199,6 +1227,7 @@ section#location{
     justify-content: center;
     align-self: flex-start;
     width:30%;
+    min-width: 230px;;
     padding:1.5em;
 }
 
@@ -1209,16 +1238,12 @@ section#location{
 .contact-info{
     width:30%;
     padding:1em;
-    margin-bottom:4em;
-    margin-top:1em;
-
 }
 .contact-info h1{
     margin-top:0;
 }
 .email-form{
     padding:1em;
-    margin-top:3em;
     border: 1px solid rgba(114, 114, 114, 0.589);
     -webkit-box-shadow: 5px 5px 16px 7px rgba(0,0,0,0.86); 
     box-shadow: 5px 5px 16px 7px rgba(0,0,0,0.86);
@@ -1267,6 +1292,7 @@ section#location{
     display:flex;
     flex-direction:row;
     justify-content: space-evenly;
+    margin-bottom:5em;
 }
 .footer{
     background-color:black;
@@ -1296,7 +1322,7 @@ section#location{
 
 /*activities section*/
 .activities-wrapper{
-    z-index: 0;
+    z-index: -1;
     position:absolute;
     top:0;
     bottom:0;
@@ -1304,28 +1330,30 @@ section#location{
     right:0;
     background-color:rgba(0, 0, 0, 0.295);
 }
+.activities-rows-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:8em;
+}
 .mountains-container{
     z-index: 1;
     display:flex;
     flex-direction:column;
     background-color:rgba(44, 45, 46, 0.301);
-    max-width:65%;
-    height:80%;
-    gap:2vh;
-    border-radius:5%;
+    max-width:50%;
+    gap:3em;
     margin-top:5em;
     
 }
 .mountain-panel{    
     display:flex;
-    justify-content:flex-start;
     transition: all 1s ease;
     overflow:auto;
     
     padding:1.2em;
-    width: 100%;
+    width: 150%;
     height: 100%;
-    max-height:50vh;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 10px );
@@ -1334,13 +1362,11 @@ section#location{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .mountain-panel:hover{    
-    height:300%;
-    width:110%;   
+    background: rgba(0, 0, 0, 0.105); 
 }
 
 .mountainimg-container{
-    position:sticky;
-    top:0em;
+
     height:50%;
     min-width:40%;
     
@@ -1349,12 +1375,11 @@ section#location{
     border-radius: 10px;;
     transition:0.2s;
     height:100%;
-    max-height:300px;
     max-width: 100%;    
 }
 .mountainimg:hover{
-    cursor:pointer;
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    opacity:0.75;
+    cursor:zoom-in;
 }
 .mountainimg:active{
     opacity: 0.6;
@@ -1365,10 +1390,9 @@ section#location{
     height: 0px;
 }
 .mountain-info{
-    margin:auto;
     min-width:30%;
     overflow:auto;
-    margin-right:5vw;
+    vertical-align: top;
 }
 
 .gemeindebig-container{
@@ -1634,7 +1658,11 @@ section#booknow{
     right:0;
 }
 .google-forms-container{
-    background-color:rgba(255, 255, 255, 0.464);
+    background: rgba(255, 255, 255, 0.36);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 10px;
     margin-top:1em;
     padding:0;
