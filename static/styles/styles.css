@@ -12,7 +12,7 @@ body{
     line-height:1.6;
     background-color:rgb(45, 49, 51);
     overflow-x:hidden;
-    max-width:100%;
+    max-width: 100%;
 }
 /*body::-webkit-scrollbar{
     width: 0px;
@@ -26,9 +26,11 @@ html {
     font-weight: 500;
     text-shadow: 1px 1px 7px #000000;
     z-index: 0;
+    max-width: 100%;
+
        
 }
-/*parallax try*/
+/*parallax*/
 .parallax-window-home {
     
     transition: all 1s ease;
@@ -75,8 +77,15 @@ html {
 
 
 /*media*/
-
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 420px){
+    .navbarbooknow{
+        display:none;
+    }
+    .main-content{
+        min-width:60%;
+    }
+}
+@media only screen and (max-width: 800px){
     .gallery-div,
     .contact-div,
     .language-switcher-select{
@@ -85,6 +94,22 @@ html {
         pointer-events: none;
         opacity:0;
     }
+}
+
+@media only screen and (min-width: 800px){
+    .contactnav,
+    .gallerynav,
+    .gallerynavdiv,
+    .contactnavdiv,
+    .languagenav{
+        display:none;
+    }
+    .nav-ul-active{
+        margin-bottom:-2em;
+    }
+}
+
+@media only screen and (max-width: 700px){
     .rooms-rows-container,
     .location-rows-container{
         flex-direction: column;
@@ -100,7 +125,7 @@ html {
     .rooms-info-panel{
         position:static;
         margin: 0 auto;
-        min-width:280px
+        min-width:75%;
     }
 
     .about-us-panel-pictures{
@@ -108,7 +133,7 @@ html {
     }
     .about-us-panel-pictures:hover
     {
-        width:90%;
+        /*add hover effect*/
     }
 
     .about-us-panel-pictures-main{
@@ -122,11 +147,11 @@ html {
     }
     /*loc*/
     .location-panel-maps{
-        width:75%;
+        width:80%;
         height:60vh;
     }
     .location-panel-maps:hover{
-        width:80%;
+        /*add hver effect*/
     }
     .page-header-3,
     .page-header-4{
@@ -145,16 +170,7 @@ html {
 
 }
 @media only screen and (min-width: 700px){
-    .contactnav,
-    .gallerynav,
-    .gallerynavdiv,
-    .contactnavdiv,
-    .languagenav{
-        display:none;
-    }
-    .nav-ul-active{
-        margin-bottom:-2em;
-    }
+
     /*roo*/
     .rooms-rows-container,
     .aboutus-rows-container,
@@ -169,7 +185,7 @@ html {
     .rooms-info-panel{
         position:sticky;
         width: 50%;
-        min-width:230px;
+        min-width:220px;
     }
     /*abou*/
     .about-us-panel-pictures{
@@ -233,7 +249,7 @@ html {
 
 }
 /*div1*/
-.wrapper-1{  
+/*.wrapper-1{  
     display:flex;
     position:fixed;
     top:0;
@@ -267,7 +283,7 @@ html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
+}*/
     .container{
         width: 100%;
         height: 100%;
@@ -290,15 +306,16 @@ html {
     #nav .active{
         text-decoration: underline;
     }
-    .header-middle{
+    .header-middle-div{
         font-family: Amatic SC, Arial;
         font-size:1.4em;
         margin-top:-2px;
     }
     .header-bar-invisible{
-        display:flex;
-        align-items: center;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
         justify-content: space-between;
+        align-items: center;
         color:white;
         position:fixed;
         top:0;
@@ -311,7 +328,6 @@ html {
     }
     .header-bar{
         display:flex;
-        align-items: center;
         justify-content: space-between;
         color:white;
         position:fixed;
@@ -328,9 +344,8 @@ html {
             display:flex;
             column-gap: 3vw;
             justify-content: flex-start;
-            width:26vw;
-            padding-right:3vw;
             padding-left:3vw;
+            padding-right:3vw;
         }
         .header-left, div{
             align-items: center;
@@ -339,7 +354,7 @@ html {
             transition:opacity 0.2s;
         }
         .hamburger-menu-div:hover{
-            opacity:0.75;
+            opacity:0.7;
         }
         .hamburger-menu-div:active{
             opacity:0.4;
@@ -374,7 +389,7 @@ html {
         .contact-div:hover .phoneimg,
         .gallery-div:hover .galleryimg
         {
-            transform: rotate(360deg);
+            transform: rotate(360deg); /*this is stupid*/
         }
         
         .phoneimg,
@@ -387,7 +402,6 @@ html {
 
         /*middle section*/
         .header-middle{
-            flex: 2;
             white-space: nowrap;
         }
         .header-middle a:hover{
@@ -422,9 +436,8 @@ html {
         .header-right{
             flex: 1;
             display:flex;
+            column-gap: 3vw;
             justify-content: flex-end;
-            width:26vw;
-            padding-right:3vw;
             padding-left:3vw;
         }
         .book-now-btn{
@@ -521,6 +534,7 @@ html {
         }
         .nav-ul-active div:hover{
             padding-left: 0.5em;
+            text-decoration: underline;
         }
         .nav-ul-active div a{
             color:white;
@@ -584,7 +598,7 @@ html {
             pointer-events: none;
         }
         .covid-close:hover{
-            opacity: 0.6;
+            opacity: 0.7;
         }
         .covid-close:active{
             opacity: 0.30;
@@ -627,10 +641,10 @@ html {
             transition: all 0.2s;
         }
         .read-details-btn:hover{
-            background-color:rgba(0, 0, 0, 0.692);
+            background-color:rgba(0, 0, 0, 0.7);
         }
         .read-details-btn:active{
-            background-color:rgba(0, 0, 0, 0.507);
+            background-color:rgba(0, 0, 0, 0.5);
         }
 
 
@@ -658,7 +672,7 @@ html {
         }
 
         .downarrow:hover{
-            background-color:rgba(0, 0, 0, 0.482);
+            background-color:rgba(0, 0, 0, 0.5);
         }
         .downarrow:hover .downarrowimg{
             width: 0.85em;
@@ -783,14 +797,9 @@ p{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.about-us-panel-pictures,
-.location-panel-maps{
-    min-width: 300px;
-}
 
 .about-us-panel{
 
-    min-width:230px;
     height: 45%;
     overflow:auto;
     transition: all 1s ease;
@@ -888,14 +897,16 @@ section#location{
     padding-bottom:2em;
 }
 .rooms-column-container{
+    display:none;
     background-color:rgba(0, 0, 0, 0.411);
-    padding-right:4em;
+    padding-right:6vh;
     padding-top:4em;
-    padding-left: 4em;
+    padding-left: 6vh;
 
     display:flex;
     flex-direction: column;
     gap:3em;
+    max-width: 100%;
     }
 
 .rooms-info-panel{
@@ -943,6 +954,8 @@ section#location{
 
 }
 .rooms-img-container{
+    display: flex;
+    height:100%;
     padding:0;
     margin-bottom:-7px;
     position:relative;
@@ -977,7 +990,6 @@ section#location{
     overflow-y:hidden;
 
     padding-left:1.2em;
-    min-width:320px;
     max-width:500px;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -985,6 +997,7 @@ section#location{
     -webkit-backdrop-filter: blur( 7px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 .rooms-pictures-container img{
     max-width: 100%;
@@ -1020,7 +1033,7 @@ section#gallery{
 }
 
 .gallery-panel:hover{
-    width: 78%;
+    /*add new hover*/
 }
 .gallery-container{
     overflow-y: hidden;
@@ -1029,7 +1042,7 @@ section#gallery{
     justify-content:center;
     align-items: center;
 
-    width: 100%;
+    width: 99%;
     height: 100%;
     background: rgba(0, 0, 0, 0.822);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -1173,7 +1186,9 @@ section#gallery{
 }
 .rooms-slide-right:hover,
 .rooms-slide-left:hover{
-    background-color: rgba(0, 0, 0, 0.555);
+    opacity:0.7;
+    cursor: pointer;
+
 }
 
 .rooms-slide-right:active,
@@ -1227,8 +1242,7 @@ section#gallery{
     justify-content: center;
     align-self: flex-start;
     width:30%;
-    min-width: 230px;;
-    padding:1.5em;
+    padding:1em;
 }
 
 .straight-line{
@@ -1290,7 +1304,6 @@ section#gallery{
     overflow-wrap: break-word;
     width:100%;
     display:flex;
-    flex-direction:row;
     justify-content: space-evenly;
     margin-bottom:5em;
 }
@@ -1378,11 +1391,11 @@ section#gallery{
     max-width: 100%;    
 }
 .mountainimg:hover{
-    opacity:0.75;
+    opacity:0.7;
     cursor:zoom-in;
 }
 .mountainimg:active{
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .mountain-panel::-webkit-scrollbar{
@@ -1431,12 +1444,12 @@ section#gallery{
     opacity:0.4;
 }
 
-    /* senseless bubbles */
+    /* senseless bubbles /*
 /*aboutus*/
 .page-header-2{    
     padding-top:4em;;
 }
-.bubble1{
+/*.bubble1{
     position:absolute;
     width:600px;
     height:600px;
@@ -1492,9 +1505,9 @@ section#gallery{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     transition: all 3s ease;
 }
-
+*/
 /*location*/
-
+/*
 .bubble4{
     position:absolute;
     width:150px;
@@ -1532,8 +1545,9 @@ section#gallery{
 .bubble5:hover{
     transform: scale(1.3);
 }
-
+*/
 /*rooms*/
+/*
 .bubble6{
     position:absolute;
     width:450px;
@@ -1573,9 +1587,9 @@ section#gallery{
 .bubble7:hover{
     transform: scale(1.9)
 }
-
+*/
 /*activities*/
-
+/*
 .bubble8{
     position:absolute;
     width:50px;
@@ -1613,7 +1627,7 @@ section#gallery{
 }
 .bubble9:hover{
     transform: scale(1.6);
-}
+}*/
 
 /*book now section*/
 .parallax-window-rooms{

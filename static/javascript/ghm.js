@@ -78,7 +78,7 @@ function myFunction() {
 
   } else {
     document.getElementById("navbar").style.opacity = "1";
-    document.getElementById("navbar").style.height = "4em";
+    document.getElementById("navbar").style.height = "5em";
     document.getElementById("youthhostel").style.fontSize = "13px";
     document.getElementById("youthhostel").style.marginTop = "-9px";
     document.getElementById("navUl").style.marginTop = "-1em";
@@ -87,6 +87,7 @@ function myFunction() {
 }
 
 //nav items underline
+/*
 const nav = document.querySelectorAll('#nav');
 const sectonAll = document.querySelectorAll('section[id]');
 window.addEventListener('scroll',() => {
@@ -101,7 +102,7 @@ window.addEventListener('scroll',() => {
       document.querySelector('div a[href*="'+sectionId + '"]').classList.remove('active');
     }
   });
-});
+});*/
 
 // media queries
 // Create a condition that targets viewports at least 768px wide
