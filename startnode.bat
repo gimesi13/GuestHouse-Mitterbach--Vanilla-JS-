@@ -1,0 +1,2 @@
+set_COMPAT_LAYER=RunAsInvoker
+start install_tools
